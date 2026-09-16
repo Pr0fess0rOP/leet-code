@@ -9,18 +9,21 @@ class Solution:
 
             addition = carry + int(a[i]) + int(b[i])
 
-            if addition == 0:
-                answer.insert(0, 0) 
-                carry = 0
-            if addition == 1:
-                answer.insert(0, 1) 
-                carry = 0
-            if addition == 2:
-                answer.insert(0, 0)
-                carry = 1 
-            if addition == 3:
-                answer.insert(0, 1)
-                carry = 1 
+            answer.insert(0, addition % 2)
+            carry = addition // 2
+            
+            # if addition == 0:
+            #     answer.insert(0, 0) 
+            #     carry = 0
+            # if addition == 1:
+            #     answer.insert(0, 1) 
+            #     carry = 0
+            # if addition == 2:
+            #     answer.insert(0, 0)
+            #     carry = 1 
+            # if addition == 3:
+            #     answer.insert(0, 1)
+            #     carry = 1 
 
         for j in range(i- 1, -(max(len(a), len(b)) + 1), -1):
             if len(a) > len(b):
@@ -28,15 +31,18 @@ class Solution:
             else:
                 addition = carry + int(b[j])
 
-            if addition == 0:
-                answer.insert(0, 0) 
-                carry = 0
-            if addition == 1:
-                answer.insert(0, 1) 
-                carry = 0
-            if addition == 2:
-                answer.insert(0, 0)
-                carry = 1 
+            answer.insert(0, addition % 2)
+            carry = addition // 2
+
+            # if addition == 0:
+            #     answer.insert(0, 0) 
+            #     carry = 0
+            # if addition == 1:
+            #     answer.insert(0, 1) 
+            #     carry = 0
+            # if addition == 2:
+            #     answer.insert(0, 0)
+            #     carry = 1 
         
         if carry != 0:
             answer.insert(0,1)
