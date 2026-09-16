@@ -9,7 +9,7 @@ class Solution:
 
             addition = carry + int(a[i]) + int(b[i])
 
-            answer.insert(0, addition % 2)
+            answer.append(str(addition % 2))
             carry = addition // 2
             
             # if addition == 0:
@@ -31,7 +31,7 @@ class Solution:
             else:
                 addition = carry + int(b[j])
 
-            answer.insert(0, addition % 2)
+            answer.append(str(addition % 2))
             carry = addition // 2
 
             # if addition == 0:
@@ -45,7 +45,7 @@ class Solution:
             #     carry = 1 
         
         if carry != 0:
-            answer.insert(0,1)
+            answer.append("1")
             carry = 0
 
-        return "".join(map(str, answer))
+        return "".join(answer[::-1])
