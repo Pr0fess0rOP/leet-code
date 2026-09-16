@@ -1,7 +1,5 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        a = list(a)
-        b = list(b)
         answer = []
         carry = 0
 
