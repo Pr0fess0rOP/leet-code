@@ -23,7 +23,8 @@ class Solution:
                 # If we got the exact match, return that
                 if current_sum == target:
                     return target
-    
+
+                # if sum is not equal then check if the new sum is better than our best answer
                 if abs(target - closest_sum) > abs(target - current_sum):
                     closest_sum = current_sum
 
