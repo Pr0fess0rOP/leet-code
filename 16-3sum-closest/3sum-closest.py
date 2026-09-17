@@ -35,7 +35,7 @@ class Solution:
                 if current_sum > target: 
                     right -= 1
                 # since we already check 
-                # Since array is sorted, i can move "right" to a less index for a smaller number
+                # Since array is sorted, i can move "left" to a less index for a bigger number
                 else:
                     left += 1
 
