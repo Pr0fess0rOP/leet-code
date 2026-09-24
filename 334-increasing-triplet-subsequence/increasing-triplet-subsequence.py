@@ -6,30 +6,24 @@ class Solution:
         if n < 3:
             return False
 
-        max_array = [0]*n
-        min_array = [0]*n
 
+        curr = float('inf')
         maxx = float('-inf')
         minn = float('inf')
         
-        for i in range(n):
-            minn = min(nums[i], minn)
-            min_array[i] = minn
-        
-        for j in range(n-1, -1, -1):
-            maxx = max(nums[j], maxx)
-            max_array[j] = maxx
 
-        for k in range(1, n-1, 1):
-            print(i)
-            if  min_array[k-1] < nums[k] < max_array[k+1]:
+        for k in range(0, n, 1):
+
+            if curr < nums[k]:
                 return True
+             
+            if minn < nums[k]:
+                curr = min(curr, nums[k])
             
+            
+            minn = min(nums[k], minn)
+
         return False
             
 
             
-
-            # for j in range(i+1, n-1):
-            #     for k in range(j+1, n):
-                    
